@@ -1,5 +1,7 @@
 package net.santoeva.santosupdate;
 
+import net.minecraft.world.item.CreativeModeTabs;
+import net.santoeva.santosupdate.item.ModItems;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -33,13 +35,14 @@ public class SantosUpdate {
 
         modEventBus.addListener(this::commonSetup);
 
+        //Lets Neoforge Register Items
+        ModItems.register(modEventBus);
+
 
 
         NeoForge.EVENT_BUS.register(this);
 
-
         modEventBus.addListener(this::addCreative);
-
 
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
@@ -59,6 +62,10 @@ public class SantosUpdate {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SILVER_INGOT.get());
+            event.accept(ModItems.SILVER_RAW.get());
+        }
     }
 
 
