@@ -10,6 +10,10 @@ public class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SantosUpdate.MOD_ID);
 
+
+    //Custom Items
+
+    //Silver Items
     public static final DeferredItem<Item> SILVER_RAW = ITEMS.registerSimpleItem("silver_raw");
     public static final DeferredItem<Item> SILVER_INGOT = ITEMS.registerItem("silver_ingot",
             Item::new, new Item.Properties());

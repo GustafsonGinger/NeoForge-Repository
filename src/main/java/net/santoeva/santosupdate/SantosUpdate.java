@@ -1,6 +1,7 @@
 package net.santoeva.santosupdate;
 
 import net.minecraft.world.item.CreativeModeTabs;
+import net.santoeva.santosupdate.block.ModBlocks;
 import net.santoeva.santosupdate.item.ModItems;
 import org.slf4j.Logger;
 
@@ -35,8 +36,11 @@ public class SantosUpdate {
 
         modEventBus.addListener(this::commonSetup);
 
-        //Lets Neoforge Register Items
+        //Lets Neoforge Register Everything
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
+
 
 
 
