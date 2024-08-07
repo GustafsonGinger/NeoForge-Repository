@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "net.santoeva.santosupdate.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AnvilMenuReworkMixin"
+  ],
+  "client": [
+    "AnvilScreenReworkMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
