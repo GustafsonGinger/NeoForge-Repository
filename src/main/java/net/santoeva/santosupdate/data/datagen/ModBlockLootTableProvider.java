@@ -29,7 +29,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     //Generate Tables
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.SILVER_ORE.get());
+        dropSelf(ModBlocks.SILVER_BLOCK.get());
         this.add(ModBlocks.SILVER_ORE.get(),
                 block -> createSufficientOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.SILVER_RAW.get()));
     }
