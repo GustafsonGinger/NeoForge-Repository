@@ -32,18 +32,50 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.SILVER_BLOCK.get());
         this.add(ModBlocks.SILVER_ORE.get(),
                 block -> createSufficientOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.SILVER_RAW.get()));
+
+        this.add(ModBlocks.SMOLDERING_ORE.get(),
+                block -> createScarceOreDrop(ModBlocks.SMOLDERING_ORE.get(), ModItems.SMOLDERING_SLAG.get()));
     }
+
+
+
+
+
+
 
 
     //Predefined Loot Tables
     //Need to make them their own class sometime
+    protected LootTable.Builder createScarceOreDrop(Block block, Item item) {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this
+                .applyExplosionDecay(block, LootItem.lootTableItem(item)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.0F, 2.0F)))
+                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
 
     protected LootTable.Builder createSufficientOreDrop(Block block, Item item) {
         HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
         return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this
                 .applyExplosionDecay(block, LootItem.lootTableItem(item)
-                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))
+                .apply(SetItemCountFunction.setCount(UniformGenerator.between(1.5F, 3.0F)))
                 .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+
+    protected LootTable.Builder createPlentifulOreDrop(Block block, Item item) {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this
+                .applyExplosionDecay(block, LootItem.lootTableItem(item)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.5F, 6.0F)))
+                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
+    }
+
+    protected LootTable.Builder createLavishOreDrop(Block block, Item item) {
+        HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+        return this.createSilkTouchDispatchTable(block, (LootPoolEntryContainer.Builder)this
+                .applyExplosionDecay(block, LootItem.lootTableItem(item)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(4.0F, 7.5F)))
+                        .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
 
 

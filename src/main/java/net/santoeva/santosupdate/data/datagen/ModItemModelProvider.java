@@ -16,5 +16,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.SILVER_INGOT.get());
         basicItem(ModItems.SILVER_RAW.get());
 
+        basicItem(ModItems.SMOLDERING_SLAG.get());
+
     }
 }

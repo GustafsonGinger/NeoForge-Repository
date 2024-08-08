@@ -24,6 +24,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.SILVER_ORE.get())
                 .add(ModBlocks.SILVER_BLOCK.get())
+
+                .add(ModBlocks.SMOLDERING_ORE.get())
         ;
         this.tag(Tags.Blocks.NEEDS_WOOD_TOOL)
 
@@ -36,6 +38,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.SILVER_BLOCK.get())
         ;
         this.tag(BlockTags.NEEDS_IRON_TOOL)
+                .add(ModBlocks.SMOLDERING_ORE.get())
 
         ;
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)

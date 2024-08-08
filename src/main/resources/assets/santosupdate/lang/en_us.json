@@ -1,9 +1,11 @@
 {
   "item.santosupdate.silver_raw": "Raw Silver",
   "item.santosupdate.silver_ingot": "Silver Ingot",
+  "item.santosupdate.smoldering_slag": "Smoldering Slag",
 
   "block.santosupdate.silver_ore": "Silver Ore",
   "block.santosupdate.silver_block": "Block of Silver",
+  "block.santosupdate.smoldering_ore": "Smoldering Ore",
 
 
   "itemGroup.santosupdate.util_tab": "Util"

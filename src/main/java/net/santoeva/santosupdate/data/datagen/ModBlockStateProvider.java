@@ -19,6 +19,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
     protected void registerStatesAndModels() {
         blockWithItem(ModBlocks.SILVER_ORE);
         blockWithItem(ModBlocks.SILVER_BLOCK);
+        blockWithItem(ModBlocks.SMOLDERING_ORE);
     }
 
     private void blockWithItem(DeferredBlock<Block> deferredBlock){

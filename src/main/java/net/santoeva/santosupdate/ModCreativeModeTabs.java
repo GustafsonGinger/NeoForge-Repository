@@ -28,6 +28,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SILVER_INGOT);
 
                         output.accept(ModBlocks.SILVER_ORE);
+
+                        output.accept(ModItems.SMOLDERING_SLAG);
+                        output.accept(ModBlocks.SMOLDERING_ORE);
                     })
                     .build());
 
