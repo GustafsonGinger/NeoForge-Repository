@@ -1,5 +1,6 @@
 package net.santoeva.santosupdate.item.custom;
 
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -14,7 +15,6 @@ public class SlagItem extends Item {
         this.burnTime = burnTime;
 
     }
-
 
 
     @Override

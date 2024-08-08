@@ -21,7 +21,7 @@ public class ModItems {
 
     //Slag Items
     public static final DeferredItem<Item> SMOLDERING_SLAG = ITEMS.registerItem("smoldering_slag",
-            properties -> new SlagItem(properties, 3200), new Item.Properties());
+            properties -> new SlagItem(properties, 4800), new Item.Properties());
 
 
 
